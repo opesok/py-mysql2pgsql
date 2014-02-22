@@ -43,9 +43,9 @@ mysql:
  hostname: localhost
  port: 3306
  socket: /tmp/mysql.sock
- username: mysql2psql
+ username: root
  password: 
- database: mysql2psql_test
+ database: report
  compress: false
 destination:
  # if file is given, output goes to file, else postgres
@@ -53,9 +53,9 @@ destination:
  postgres:
   hostname: localhost
   port: 5432
-  username: mysql2psql
+  username: postgres
   password: 
-  database: mysql2psql_test
+  database: report
 
 # if tables is given, only the listed tables will be converted.  leave empty to convert all tables.
 #only_tables:
@@ -70,7 +70,7 @@ destination:
 supress_data: false
 
 # if supress_ddl is true, only the data will be exported/imported, and not the schema
-supress_ddl: false
+supress_ddl: true
 
 # if force_truncate is true, forces a table truncate before table loading
 force_truncate: false
