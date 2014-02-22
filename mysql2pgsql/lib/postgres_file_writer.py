@@ -132,6 +132,7 @@ SET client_min_messages = warning;
 -- Data for Name: %(table_name)s; Type: TABLE DATA;
 --
 
+ALTER TABLE %(table_name)s DISABLE TRIGGER ALL;
 COPY %(table_name)s (%(column_names)s) FROM stdin;
 """ % {
                 'table_name': table.name,
